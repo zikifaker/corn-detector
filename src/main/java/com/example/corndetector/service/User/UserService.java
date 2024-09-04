@@ -1,4 +1,4 @@
-package com.example.corndetector.service;
+package com.example.corndetector.service.User;
 
 import com.example.corndetector.dao.UserDao;
 import com.example.corndetector.entity.User;
