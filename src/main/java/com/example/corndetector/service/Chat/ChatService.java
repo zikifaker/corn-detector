@@ -1,4 +1,4 @@
-package com.example.corndetector.service;
+package com.example.corndetector.service.Chat;
 
 import org.springframework.stereotype.Service;
 
@@ -11,9 +11,13 @@ public class ChatService {
     public Map<String,Object> generateByText(Map<String, Object> formData){
         String modelName = (String) formData.get("model_name");
         String userPrompt = (String) formData.get("user_prompt");
-        //TODO: send a http request with userPrompt to CLIP service, then parse a response
+
+        Clip llm = new Clip(modelName);
+        String result = llm.generateContent(userPrompt);
+
         Map<String,Object> map = new HashMap<>();
-        map.put("result","ni hao");
+        map.put("data",result);
+
         return map;
     }
 }
