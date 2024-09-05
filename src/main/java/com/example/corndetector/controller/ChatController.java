@@ -1,6 +1,6 @@
 package com.example.corndetector.controller;
 
-import com.example.corndetector.service.Chat.ChatService;
+import com.example.corndetector.service.chat.ChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/chat")
 public class ChatController {
-    private final ChatService chatService;
+    private ChatService chatService;
 
     @Autowired
     public ChatController(ChatService chatService) {

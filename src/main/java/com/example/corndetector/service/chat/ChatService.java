@@ -1,4 +1,4 @@
-package com.example.corndetector.service.Chat;
+package com.example.corndetector.service.chat;
 
 import org.springframework.stereotype.Service;
 

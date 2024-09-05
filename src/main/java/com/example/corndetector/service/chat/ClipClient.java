@@ -1,4 +1,4 @@
-package com.example.corndetector.service.Chat;
+package com.example.corndetector.service.chat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
@@ -11,15 +11,14 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class ClipClient {
-    private static final String baseURL = "http://localhost:5000/";
+    private static final String BASE_URL = "http://localhost:5000/";
     // a mapper for parsing object to json-form data
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static CloseableHttpClient client = HttpClients.createDefault();
     private String modelName;
-    private final CloseableHttpClient client;
 
     public ClipClient(String modelName){
         this.modelName = modelName;
-        client = HttpClients.createDefault();
     }
 
     public String getModelName() {
@@ -35,7 +34,7 @@ public class ClipClient {
             String jsonBody = objectMapper.writeValueAsString(r);
             StringEntity body = new StringEntity(jsonBody);
 
-            HttpPost request = new HttpPost(baseURL);
+            HttpPost request = new HttpPost(BASE_URL);
             request.setHeader("Content-type","application/json");
             request.setEntity(body);
 
@@ -44,7 +43,6 @@ public class ClipClient {
         }catch (IOException err){
             err.printStackTrace();
         }
-
         return null;
     }
 }

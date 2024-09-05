@@ -1,8 +1,8 @@
-package com.example.corndetector.service.Chat;
+package com.example.corndetector.service.chat;
 
 public class Clip {
+    private ClipClient client;
     private String modelName;
-    private final ClipClient client;
 
     public Clip(String modelName){
         this.modelName = modelName;
