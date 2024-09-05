@@ -10,10 +10,10 @@ public class ChatService {
 
     public Map<String,Object> generateByText(Map<String, Object> formData){
         String modelName = (String) formData.get("model_name");
-        String userPrompt = (String) formData.get("user_prompt");
+        String input = (String) formData.get("input");
 
         Clip llm = new Clip(modelName);
-        String result = llm.generateContent(userPrompt);
+        String result = llm.generateContent(input);
 
         Map<String,Object> map = new HashMap<>();
         map.put("data",result);
