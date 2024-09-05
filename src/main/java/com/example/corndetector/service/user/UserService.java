@@ -1,4 +1,4 @@
-package com.example.corndetector.service.User;
+package com.example.corndetector.service.user;
 
 import com.example.corndetector.dao.UserDao;
 import com.example.corndetector.entity.User;
@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-    private final UserDao userDao;
+    private UserDao userDao;
 
     @Autowired
     public UserService(UserDao userDao) {
