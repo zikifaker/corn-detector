@@ -6,7 +6,7 @@ public class Clip {
 
     public Clip(String modelName){
         this.modelName = modelName;
-        client = new ClipClient(modelName);
+        this.client = new ClipClient();
     }
 
     public String getModelName() {
@@ -17,11 +17,12 @@ public class Clip {
         this.modelName = modelName;
     }
 
-    public String generateContent(String prompt){
+    public String generateContent(String input){
         CompletionRequest r = new CompletionRequest();
         r.setModelName(modelName);
-        r.setInput(prompt);
+        r.setInput(input);
 
-        return client.createCompletion(r);
+        Completion content = client.createCompletion(r);
+        return content.getoutput();
     }
 }
