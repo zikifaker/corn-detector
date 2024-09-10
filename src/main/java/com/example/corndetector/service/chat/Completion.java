@@ -16,11 +16,11 @@ public class Completion {
         this.modelName = modelName;
     }
 
-    public String getoutput() {
+    public String getOutput() {
         return output;
     }
 
-    public void setoutput(String output) {
+    public void setOutput(String output) {
         this.output = output;
     }
 }

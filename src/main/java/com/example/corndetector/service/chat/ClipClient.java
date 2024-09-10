@@ -13,11 +13,11 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 public class ClipClient {
+    private static final String BASE_URL = "http://47.100.189.13";
     private static final Logger logger = LoggerFactory.getLogger(ClipClient.class);
-    private static final String BASE_URL = "http://localhost:5000/";
     // a mapper for parsing object to json-form data
-    private static ObjectMapper objectMapper = new ObjectMapper();
-    private static CloseableHttpClient client = HttpClients.createDefault();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static final CloseableHttpClient client = HttpClients.createDefault();
 
     public ClipClient(){}
 
