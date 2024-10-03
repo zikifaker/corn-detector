@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Completion {
     @JsonProperty("model_name")
     private String modelName;
+
     @JsonProperty("output")
     private String output;
 

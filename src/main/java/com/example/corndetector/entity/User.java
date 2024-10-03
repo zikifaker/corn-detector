@@ -8,6 +8,7 @@ import java.util.Date;
 public class User {
     @Id
     private int id;
+
     private Date createTime;
 
     public int getId(){

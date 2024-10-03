@@ -2,6 +2,7 @@ package com.example.corndetector.service.chat;
 
 public class Clip {
     private final ClipClient client;
+
     private String modelName;
 
     public Clip(String modelName){
@@ -23,6 +24,7 @@ public class Clip {
         r.setInput(input);
 
         Completion content = client.createCompletion(r);
+
         return content.getOutput();
     }
 }

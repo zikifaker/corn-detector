@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class CompletionRequest {
     @JsonProperty("model_name")
     private String modelName;
+
     @JsonProperty("input")
     private String input;
 
