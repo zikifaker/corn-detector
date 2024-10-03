@@ -14,14 +14,20 @@ import java.io.IOException;
 
 public class ClipClient {
     private static final Logger logger = LoggerFactory.getLogger(ClipClient.class);
-    private static final String BASE_URL = "http://localhost:5000/";
-    // a mapper for parsing object to json-form data
-    private static ObjectMapper objectMapper = new ObjectMapper();
-    private static CloseableHttpClient client = HttpClients.createDefault();
 
-    public ClipClient(){}
+    private static final CloseableHttpClient client = HttpClients.createDefault();
+
+    private static final String BASE_URL = "http://47.100.189.13";
+
+    // a mapper for parsing object to json-form data
+    private final ObjectMapper objectMapper;
+
+    public ClipClient(){
+        this.objectMapper = new ObjectMapper();
+    }
 
     public Completion createCompletion(CompletionRequest r){
+        Completion completion = null;
         try{
             String jsonBody = objectMapper.writeValueAsString(r);
             StringEntity body = new StringEntity(jsonBody);
@@ -31,12 +37,12 @@ public class ClipClient {
             request.setEntity(body);
 
             HttpResponse response = client.execute(request);
-
             String responseBody = EntityUtils.toString(response.getEntity(),"UTF-8");
-            return objectMapper.readValue(responseBody,Completion.class);
+
+            completion = objectMapper.readValue(responseBody,Completion.class);
         }catch (IOException err){
             logger.info(err.getMessage());
         }
-        return null;
+        return completion;
     }
 }

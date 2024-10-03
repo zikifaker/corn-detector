@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/chat")
 public class ChatController {
-    private ChatService chatService;
+    private final ChatService chatService;
 
     @Autowired
     public ChatController(ChatService chatService) {

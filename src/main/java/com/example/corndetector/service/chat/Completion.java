@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Completion {
     @JsonProperty("model_name")
     private String modelName;
+
     @JsonProperty("output")
     private String output;
 
@@ -16,11 +17,11 @@ public class Completion {
         this.modelName = modelName;
     }
 
-    public String getoutput() {
+    public String getOutput() {
         return output;
     }
 
-    public void setoutput(String output) {
+    public void setOutput(String output) {
         this.output = output;
     }
 }
