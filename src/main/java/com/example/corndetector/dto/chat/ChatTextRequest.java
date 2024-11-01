@@ -1,12 +1,8 @@
-package com.example.corndetector.dto;
+package com.example.corndetector.dto.chat;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class CompletionRequest {
-    @JsonProperty("model_name")
+public class ChatTextRequest {
     private String modelName;
 
-    @JsonProperty("input")
     private String input;
 
     public String getModelName() {

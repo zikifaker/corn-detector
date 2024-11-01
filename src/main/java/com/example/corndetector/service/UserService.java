@@ -1,4 +1,4 @@
-package com.example.corndetector.service.user;
+package com.example.corndetector.service;
 
 import com.example.corndetector.entity.User;
 import com.example.corndetector.mapper.UserMapper;

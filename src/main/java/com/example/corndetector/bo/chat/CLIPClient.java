@@ -1,7 +1,7 @@
-package com.example.corndetector.service.chat;
+package com.example.corndetector.bo.chat;
 
-import com.example.corndetector.dto.Completion;
-import com.example.corndetector.dto.CompletionRequest;
+import com.example.corndetector.dto.chat.Completion;
+import com.example.corndetector.dto.chat.CompletionRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;

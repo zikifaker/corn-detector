@@ -1,7 +1,7 @@
-package com.example.corndetector.service.chat;
+package com.example.corndetector.bo.chat;
 
-import com.example.corndetector.dto.Completion;
-import com.example.corndetector.dto.CompletionRequest;
+import com.example.corndetector.dto.chat.Completion;
+import com.example.corndetector.dto.chat.CompletionRequest;
 
 public class CLIP {
     private CLIPClient client;
@@ -23,9 +23,8 @@ public class CLIP {
 
     public String generateContent(String input){
         CompletionRequest request = new CompletionRequest();
-        request.setModelName(modelName);
+        request.setModelName(this.modelName);
         request.setInput(input);
-
         return client.createCompletion(request)
                 .map(Completion::getOutput)
                 .orElse("");

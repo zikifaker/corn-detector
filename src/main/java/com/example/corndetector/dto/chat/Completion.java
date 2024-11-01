@@ -1,4 +1,4 @@
-package com.example.corndetector.dto;
+package com.example.corndetector.dto.chat;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
