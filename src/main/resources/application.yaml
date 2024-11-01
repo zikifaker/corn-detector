@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/corn_detector?serverTimezone=Asia/Shanghai
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zydhb96@h
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
